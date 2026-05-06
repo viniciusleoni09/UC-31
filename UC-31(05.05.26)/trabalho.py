@@ -6,11 +6,11 @@ app = Flask(__name__)
 @app.route('/arearestrita/<int:id>')
 def arearestrita(id):
     if id == 1:
-        # Cadeado fechado
+        
         img_url = "https://cdn-icons-png.flaticon.com/512/61/61457.png"
         legenda = "Cadeado Fechado"
     elif id == 2:
-        # Cadeado aberto
+        
         img_url = "https://cdn-icons-png.flaticon.com/512/61/61456.png"
         legenda = "Cadeado Aberto"
     else:
