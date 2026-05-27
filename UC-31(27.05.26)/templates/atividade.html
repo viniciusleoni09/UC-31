@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}TechFuture{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="/" class="logo">⬡ TechFuture</a>
+        <nav class="nav-links">
+            <a href="/">Início</a>
+            <a href="/cursos">Cursos</a>
+            <a href="/professores">Professores</a>
+            <a href="/contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 TechFuture. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block titulo %}TechFuture — Contato{% endblock %}
+
+{% block conteudo %}
+<section class="section">
+    <h1>Entre em Contato</h1>
+
+    <form class="contato-form">
+        <label>Nome</label>
+        <input type="text" placeholder="Seu nome completo">
+
+        <label>E-mail</label>
+        <input type="email" placeholder="seu@email.com">
+
+        <label>Mensagem</label>
+        <textarea rows="5" placeholder="Escreva sua mensagem..."></textarea>
+
+        <button type="submit" class="btn">Enviar</button>
+    </form>
+</section>
+{% endblock %}
