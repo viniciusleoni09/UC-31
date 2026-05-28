@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .erro{
+            background-color: cornsilk;
+            color: red;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: 300px;
+        }
+
+        .sucesso{
+            background-color: rgb(82, 226, 82);
+            color: darkgreen;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: 300px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> cadastro do usuario</h2>
+
+     with mensagens = get_flashed_messagens(with _)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form action="{{ url_for('cadastro_usuario') }}" method="post">
+    <label> Nome:</label><br>
+    <input type="text" name="nome"> <br><br>
+
+    <label> E-mail:</label> <br>
+    <input type="email" name="email"><br><br>
+
+    <button type="submit">cadastrar</button>
+
+</form>
+
+</body>
+</html>
