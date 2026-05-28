@@ -17,5 +17,8 @@ def cadastro():
             flash('o email e obrigatorio.', 'erro')
             return redirect(url_for('cadastro'))
 
+#tudo certo
+flash(f'Bem-vindo, {nome}! Cadastro realizado.','sucesso')
+return redirect(url_for('cadastro'))
 
     return render_template('cadastro.html')
