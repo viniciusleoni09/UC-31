@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Início – Sistema de Login{% endblock %}
+
+{% block content %}
+<main class="hero">
+  <div class="hero__card">
+    <div class="hero__icon">🔐</div>
+    <h1 class="hero__title">Sistema de Autenticação</h1>
+    <p class="hero__subtitle">
+      Acesse a área restrita com suas credenciais.<br>
+      Somente usuários cadastrados têm permissão de entrada.
+    </p>
+    <a href="{{ url_for('login') }}" class="btn btn--primary">
+      Fazer Login
+    </a>
+  </div>
+
+  <footer class="hero__footer">
+    Atividade em Duplas — Flask Sessions
+  </footer>
+</main>
+{% endblock %}

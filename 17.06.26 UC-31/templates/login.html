@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Login – Sistema de Autenticação{% endblock %}
+
+{% block content %}
+<main class="auth">
+  <div class="auth__card">
+    <a href="{{ url_for('index') }}" class="auth__back">← Início</a>
+
+    <h1 class="auth__title">Entrar</h1>
+    <p class="auth__subtitle">Use suas credenciais para acessar o sistema.</p>
+
+    {% if erro %}
+    <div class="alert alert--error" role="alert">
+      ⚠ {{ erro }}
+    </div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}" class="form">
+      <div class="form__group">
+        <label for="usuario" class="form__label">Usuário</label>
+        <input
+          type="text"
+          id="usuario"
+          name="usuario"
+          class="form__input {% if erro %}form__input--error{% endif %}"
+          placeholder="Digite seu usuário"
+          autocomplete="username"
+          required
+        />
+      </div>
+
+      <div class="form__group">
+        <label for="senha" class="form__label">Senha</label>
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          class="form__input {% if erro %}form__input--error{% endif %}"
+          placeholder="Digite sua senha"
+          autocomplete="current-password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--full">
+        Entrar
+      </button>
+    </form>
+
+    <p class="auth__hint">
+      <strong>Dica:</strong> tente <code>admin</code> / <code>admin123</code>
+    </p>
+  </div>
+</main>
+{% endblock %}

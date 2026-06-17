@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Dashboard – Área Restrita{% endblock %}
+
+{% block content %}
+<main class="dash">
+  <div class="dash__card">
+    <div class="dash__badge">✓ Autenticado</div>
+    <h1 class="dash__title">Olá, {{ nome }}!</h1>
+    <p class="dash__subtitle">
+      Você está na área restrita do sistema.<br>
+      Seu acesso foi verificado com sucesso via session.
+    </p>
+
+    <div class="dash__info">
+      <div class="info-item">
+        <span class="info-item__icon">🔑</span>
+        <div>
+          <p class="info-item__label">Sessão ativa</p>
+          <p class="info-item__value">Seus dados estão armazenados com segurança.</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-item__icon">🛡</span>
+        <div>
+          <p class="info-item__label">Rota protegida</p>
+          <p class="info-item__value">Esta página bloqueia acessos não autenticados.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="{{ url_for('logout') }}" class="btn btn--danger btn--full">
+      Sair do Sistema
+    </a>
+  </div>
+</main>
+{% endblock %}
