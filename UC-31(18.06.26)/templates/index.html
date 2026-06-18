@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Caderno de Recados</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>📒 Caderno de Recados</h1>
+
+  <form method="POST" action="/recado">
+    <label>Nome:</label>
+    <input type="text" name="nome" required maxlength="40">
+    <label>Mensagem:</label>
+    <textarea name="mensagem" rows="3" required maxlength="300"></textarea>
+    <button type="submit">Enviar recado</button>
+  </form>
+
+  <h2>Recados de hoje</h2>
+  <ul>
+    {% if recados %}
+      {% for r in recados %}
+      <li>
+        <div>
+          <strong>{{ r.nome }}</strong>
+          <span class="info"> · {{ r.hora }}</span><br>
+          {{ r.msg }}
+        </div>
+        <a href="/apagar/{{ loop.index0 }}">apagar</a>
+      </li>
+      {% endfor %}
+    {% else %}
+      <li>Nenhum recado ainda.</li>
+    {% endif %}
+  </ul>
+</body>
+</html>
